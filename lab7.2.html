@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Random number</title>
+</head>
+
+<body>
+
+<button onclick="random()">Санамсаргүй тоо</button>
+
+<h2 id="result"></h2>
+
+<input type="text" id="check">
+
+<button onclick="shalga()">Шалгах</button>
+
+<button>0</button>
+<button>1</button>
+<Br>
+<a href="index.html">1 дахь page руу орох</a>
+<script>
+
+let num = 0;
+
+function random() {
+
+    num = Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000;
+
+    document.getElementById("result").innerHTML = num;
+
+    setTimeout(function () {
+
+        document.getElementById("result").innerHTML = "";
+
+    }, 5000);
+
+}
+
+function shalga() {
+
+    if (Number(document.getElementById("check").value) == num) {
+
+        alert("Зөв байна.");
+
+        document.getElementById("check").value = "";
+
+    } else {
+
+        alert("Буруу тоо байна " + num);
+
+        document.getElementById("check").value = "";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
